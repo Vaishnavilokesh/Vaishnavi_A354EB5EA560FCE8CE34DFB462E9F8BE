@@ -1,27 +1,17 @@
-class Student:
+class player:
+  def play(self):
+    print("The player is playing cricket.")
 
-  def __init__(self, name, roll_number, cgpa):
+class Batsman(player):
+  def play(self):
+    print("The batsman is batting.")
 
-   self.name = name
-   self.roll_number = roll_number
-   self.cgpa = cgpa
+class Bowler(player):
+  def play(self):
+    print("The bowler is bowling.")
 
-def sort_students(student_list):
+batsman=Batsman()
+bowler=Bowler()
 
-  sorted_students=sorted(student_list, key=lambda student: student.cgpa, reverse=True) 
-  return sorted_students
-
-
-students=[
-  Student("Hania","A123",7.8),
-  Student("Sehar","A124",8.9),
-  Student("Anmol","A125",9.1),
-  Student("Haya","A126",9.9),
-]
-
-
-sorted_students=sort_students(students)
-
-
-for student in sorted_students:
-   print("Name: {}, Roll Number: {}, CGPA: {}".format(student.name, student.roll_number, student.cgpa))
+batsman.play()
+bowler.play()
